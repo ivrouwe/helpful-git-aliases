@@ -1,0 +1,8 @@
+[alias]
+	branches = !git branch -l
+	shear = !git checkout master && git pull && git branch | grep -v "master" | xargs git branch -d
+	ship = !git push origin $(git rev-parse --abbrev-ref HEAD)
+	stashes = !git stash list
+	sprout = "!f() { \
+		git checkout -b $1 master; \
+	}; f"
